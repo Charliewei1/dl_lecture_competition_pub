@@ -13,3 +13,11 @@
 $$\text{Acc}(ans) = min(\frac{humans \ that \ said \ ans}{3}, 1)$$
 - 1つのデータに対し，10人の回答の内9人の回答を選択し上記の式で性能を評価した，10パターンのAccの平均をそのデータに対するAccとする．
 - 予測結果と正解ラベルを比較する前に，回答をlowercaseにする，冠詞は削除するなどの前処理を行う（[詳細](https://visualqa.org/evaluation.html)）．
+
+# How to Train
+Use lambda GPU Cloud(A100)
+```
+!git clone https://github.com/GaiZhenbiao/Phi3V-Finetuning.git
+!huggingface-cli download microsoft/Phi-3-vision-128k-instruct --local-dir Phi-3-vision-128k-instruct --resume-download
+sh train_zero2.sh
+```
